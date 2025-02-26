@@ -1,0 +1,25 @@
+services:
+  azurite:
+    container_name: sdksamples-azurite
+    image: mcr.microsoft.com/azure-storage/azurite
+    ports:
+      - "40000:10000"
+      - "40001:10001"
+      - "40002:10002"
+    volumes:
+      - go_azurite_data:/data
+    command: "azurite --blobHost 0.0.0.0 --blobPort 10000 --queueHost 0.0.0.0 --queuePort 10001 --tableHost 0.0.0.0 --tablePort 10002"
+
+  cosmos:
+    container_name: sdksamples-cosmos
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview
+    ports:
+      - "8081:8081"
+      - "1234:1234"
+    environment:
+      - PROTOCOL=http
+    volumes:
+      - go_cosmos_data:/data
+volumes:
+  go_azurite_data:
+  go_cosmos_data:
