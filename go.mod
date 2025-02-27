@@ -16,6 +16,8 @@ require (
 require (
 	github.com/Azure/azure-sdk-for-go v68.0.0+incompatible // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.10.0 // indirect
+	github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus v1.8.0 // indirect
+	github.com/Azure/go-amqp v1.3.0 // indirect
 	github.com/AzureAD/microsoft-authentication-library-for-go v1.3.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/golang-jwt/jwt/v5 v5.2.1 // indirect

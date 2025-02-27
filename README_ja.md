@@ -6,12 +6,14 @@
 
 | サービス名    |     |
 | ------------- | --- |
-| Storage Blob  | ○   |
-| Storage Queue | ○   |
-| Storage Table | ○   |
+| Storage Blob  | :o: |
+| Storage Queue | :o: |
+| Storage Table | :o: |
+| Cosmos        | :o: |
+| Service Bus   | :o: |
+
 
 ## 実行
-
 Docker compose でストレージエミュレータを起動し、テストします。
 Visual Studio Code などのIDEかのテストランナーでデバッグ実行しながら動作を確認できます。
 

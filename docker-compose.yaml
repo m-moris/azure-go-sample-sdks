@@ -20,6 +20,38 @@ services:
       - PROTOCOL=http
     volumes:
       - go_cosmos_data:/data
+
+  servicebus-emulator:
+    container_name: sdksamples-servicebus
+    image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
+    volumes:
+      - ./config/servicebus-config.json:/ServiceBus_Emulator/ConfigFiles/Config.json
+    ports:
+      - "5672:5672"
+    environment:
+      SQL_SERVER: sdksamples-sqledge
+      MSSQL_SA_PASSWORD: "s4z7Oqr61egl3"
+      ACCEPT_EULA: Y
+    depends_on:
+      - sqledge
+    networks:
+      sb-emulator:
+        aliases:
+          - "sb-emulator"
+  sqledge:
+    container_name: sdksamples-sqledge
+    image: "mcr.microsoft.com/azure-sql-edge:latest"
+    networks:
+      sb-emulator:
+        aliases:
+          - "sqledge"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: "s4z7Oqr61egl3"
+networks:
+  sb-emulator:
+
+
 volumes:
   go_azurite_data:
   go_cosmos_data:
