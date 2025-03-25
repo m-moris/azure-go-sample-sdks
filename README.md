@@ -1,5 +1,7 @@
 # Go SDK Samples for Azure
 
+[日本語(Japanese)](README_ja.md)
+
 For those who feel that it is difficult to create and test resources on Azure due to the lack of Go samples in Japanese, we provide samples that allow you to easily check the operation and debug the SDK in a local environment.
 
 ## Target SDKs
